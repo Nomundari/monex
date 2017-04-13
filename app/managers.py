@@ -32,6 +32,8 @@ class FixUrls(DocumentPlugin):
     def loaded(self, ctx):
         ctx.document = ctx.document.replace('a-PC', settings.WS_SERVER).replace('127.0.0.1', settings.WS_SERVER).replace('127.0.0.1:9080', '%s:9080' % settings.WS_SERVER).replace('STATIC_URL', settings.STATIC_DOMAIN_URL)
         return ctx
+        #ctx.document = ctx.document.replace('a-PC', settings.WS_SERVER).replace('192.168.1.199', settings.WS_SERVER).replace('192.168.1.199:9080', '%s:9080' % settings.WS_SERVER).replace('STATIC_URL', settings.STATIC_DOMAIN_URL)
+        #return ctx
 
 
 class BaseDataManager(object):
