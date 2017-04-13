@@ -1,0 +1,68 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="{% static 'js/bootstrap/bootstrap.js' %}"></script>
+	<script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	<link href="{% static 'css/base/styles.css' %}" rel="stylesheet" />
+	<!-- cyborg-->
+
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet" />
+</head>
+<body>
+{{ form.non_field_errors }}
+<div class="form">
+	<form method="post">{% csrf_token %}
+		<div class="row">
+			<div class="col-md-12">
+				<label>{{ form.firstname.label }}</label> <br>
+				{{ form.firstname.error}}{{ form.firstname}}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+			<br>
+				<label>{{ form.lastname.label }}</label> <br>
+				{{ form.lastname}}{{ form.lastname.error}}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+			<br>
+				<label>{{ form.username.label }}</label> <br>
+				{{ form.username}}{{ form.username.error}}
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-12">
+			<br>
+				<label>{{ form.email.label }}</label><br>
+				{{ form.email}}{{ form.email.error}}
+			</div>
+		</div>
+
+		<div class="row">	
+			<div class="col-md-12">
+			 <br>
+				<label>{{ form.password.label }}</label><br>
+				{{ form.password }}{{ form.password.error}}
+			</div>
+		</div>
+		<div class=row>
+			<div class="col-md-8">
+			<br>
+				<button type="submit" class="btn btn-primary btn-block">Бүртгүүлэх</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>
