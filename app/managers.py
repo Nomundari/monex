@@ -143,17 +143,18 @@ class BaseDataManager(object):
         result = client.service.MXUserForgotPasswordWSDLOperation(email)
         print result
         return result
-#    @staticmethod
-#    def insert_pass(id):
-#        client = BaseDataManager.get_instance().setup_client('/MXUserNewPasswordInsertService/MXUserNewPasswordInsertPort?wsdl')
-#        print client
-#        result = client.service.MXUserNewPasswordInsertOperation(id)
-#        print result
-#        return result
-#    @staticmethod
-#    def insert_p():
-#        client = BaseDataManager.get_instance().setup_client('/UserPasswordInsertIntoDBService/UserPasswordInsertIntoDBPort?wsdl')
-#        print client
-#        result = client.service.UserPasswordInsertIntoDBOperation()
-#       print result
-#       return result
+    @staticmethod
+    def insert_pass(id):
+        client = BaseDataManager.get_instance().setup_client('/MXUserNewPasswordInsertService/MXUserNewPasswordInsertPort?wsdl')
+        print client
+        result = client.service.MXUserNewPasswordInsertOperation(id)
+        print result
+        return result
+    @staticmethod
+    def insert_p():
+        client = BaseDataManager.get_instance().setup_client('/UserPasswordInsertIntoDBService/UserPasswordInsertIntoDBPort?wsdl')
+        print client
+        result = client.service.UserPasswordInsertIntoDBOperation()
+       print result
+       return result
+
